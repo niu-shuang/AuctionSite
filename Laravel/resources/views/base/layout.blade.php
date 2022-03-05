@@ -8,7 +8,7 @@
     <script src="/js/app.js" defer></script>
 </head>
 <body>
-<header>
+<header class="header bg-dark  fixed-up">
     @include('base/header')
 </header>
 <br>

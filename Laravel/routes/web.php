@@ -13,8 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@show')
+->name("all");
 
-Route::get('all', 'App\Http\Controllers\HomeController@show');
+Route::post('CheckUserLogin','App\Http\Controllers\UserLoginController@checkLogin')
+->name("checkLogin");
+
+Route::get('UserLogin','App\Http\Controllers\UserLoginController@show')
+->name("login");
+
+
