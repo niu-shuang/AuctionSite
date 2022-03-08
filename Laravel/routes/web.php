@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,13 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@show')
-->name("all");
+Route::group(['middleware' =>['guest']], function(){
+    Route::post('checkUserLogin','App\Http\Controllers\UserLoginController@checkLogin')
+        ->name("checkUserLogin");
 
-Route::post('CheckUserLogin','App\Http\Controllers\UserLoginController@checkLogin')
-->name("checkLogin");
+    Route::get('/','App\Http\Controllers\UserLoginController@show')
+        ->name("userLogin");
 
-Route::get('UserLogin','App\Http\Controllers\UserLoginController@show')
-->name("login");
+    Route::get('userRegister','App\Http\Controllers\UserLoginController@showRegister')
+        ->name('userRegister');
+    Route::post('doUserRegister', 'App\Http\Controllers\UserLoginController@register')
+        ->name('register');
+});
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('home',[HomeController::class, 'show'])
+        ->name("all");
+});
+
+
+
 
 

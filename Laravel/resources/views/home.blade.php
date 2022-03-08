@@ -1,4 +1,4 @@
 @extends('base/layout')
 @section('content')
-<p>content</p>
+<p>Welcome : {{ Auth::user()->name }}</p>
 @endsection
