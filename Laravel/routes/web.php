@@ -22,8 +22,12 @@ Route::group(['middleware' =>['guest']], function(){
 
     Route::get('userRegister','App\Http\Controllers\UserLoginController@showRegister')
         ->name('userRegister');
+    Route::get('productRegister','App\Http\Controllers\ProductRegisterController@show')
+        ->name('productRegister');
     Route::post('doUserRegister', 'App\Http\Controllers\UserLoginController@register')
         ->name('register');
+    Route::post("doProductRegister",'App\Http\Controllers\ProductRegisterController@registerProduct')
+        ->name('registerProduct');
 });
 
 Route::group(['middleware' => ['auth']], function() {
