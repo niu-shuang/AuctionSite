@@ -15,6 +15,13 @@ class Product extends Model
         'product_name',
         'thumbnail',
         'start_price',
-        'buyout_price'
+        'buyout_price',
+        'maker_name',
+        'car_type_name',
+        'model_year',
+        'displacement',
+        'mile_age',
+        'has_repaired',
+        'body_color'
     ];
 }

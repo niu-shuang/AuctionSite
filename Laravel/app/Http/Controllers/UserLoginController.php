@@ -54,4 +54,11 @@ class UserLoginController extends Controller
         }
         return redirect(route('userLogin'));
     }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()->route('userLogin')->with('danger', 'ログアウトしました！');
+    }
 }

@@ -29,12 +29,17 @@ class ProductRegisterController extends Controller
             return back()->withErrors(['err_msg'=>'ファイルが正しくアップロードしませんでした']);
         }
 
+        if( !array_key_exists('has_repaired', $inputs)){
+            $inputs['has_repaired'] = 0;
+        }
+
         \DB::beginTransaction();
         try{
             Product::create($inputs);
             \DB::commit();
         }catch(\Throwable $e)
         {
+            echo $e->getMessage();
             \DB::rollback();
             abort(500);
         }

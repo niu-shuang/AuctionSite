@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserLoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +34,8 @@ Route::group(['middleware' =>['guest']], function(){
 Route::group(['middleware' => ['auth']], function() {
     Route::get('home',[HomeController::class, 'show'])
         ->name("all");
+    Route::get('userLogout',[UserLoginController::class,'logout'])
+        ->name('userLogout');
 });
 
 

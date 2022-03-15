@@ -6,7 +6,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="{{ asset('/css/custom.css') }}">
+    <link rel="stylesheet" href="/css/custom.css">
     <script src="/js/app.js" defer></script>
 </head>
 <body>

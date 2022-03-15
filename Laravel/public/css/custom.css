@@ -12,6 +12,11 @@
     font-size: 2rem;
 }
 
+.logout{
+    margin-left: auto;
+    font-size: 2rem;
+}
+
 .header{
     height: 100px;
 }
@@ -21,5 +26,3 @@
     overflow: scroll;
     font-size: 2rem;
 }
-
-
