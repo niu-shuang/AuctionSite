@@ -15,4 +15,12 @@ class HomeController extends Controller
         $products = Product::all();
         return view("home",['products' => $products]);
     }
+
+    /**
+     * @return view
+     */
+    public function showDetail($id){
+        $product = Product::find($id);
+        return view("productDetail",['product' => $product]);
+    }
 }

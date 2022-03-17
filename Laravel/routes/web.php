@@ -36,6 +36,8 @@ Route::group(['middleware' => ['auth']], function() {
         ->name("all");
     Route::get('userLogout',[UserLoginController::class,'logout'])
         ->name('userLogout');
+    Route::get('productDetail/{id}',[HomeController::class, 'showDetail'])
+        ->name("productDetail");
 });
 
 
