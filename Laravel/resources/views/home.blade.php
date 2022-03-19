@@ -8,12 +8,13 @@
     }
 
     .product-content{
+        width: 100%;
         display: flex;
         justify-content: left;
     }
 
     .product-title{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .product-img{
@@ -32,13 +33,20 @@
 
     .product-info{
         height: 256px;
-        margin-left: 30px;
-        font-size: 1rem;
+        width: 60%;
+        margin-right: auto;
+        margin-bottom: auto;
+        font-size: 2rem;
+        text-align: right;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-items: flex-end;
     }
 </style>
 
 <div class="row">
-    <div class="col-md-10 col-md-offset-2">
+    <div class="">
         <br><br>
         @if (session('err_msg'))
         <p class="text-danger">
@@ -55,18 +63,10 @@
                 <div class="product-img">
                     <img src='trunk/img/{{$product->thumbnail}}' alt=""/>
                 </div>
-                <div>
-                    <table class="table table-striped product-info">
-                        <tr>
-                            <td>現在価額:    {{$product->start_price}}円</td>
-                        </tr>
-                        <tr>
-                            <td>即決価額:    {{$product->buyout_price}}円</td>
-                        </tr>
-                        <tr>
-                            <td><a class="nav-link" href="productDetail/{{ $product->id }}">詳細へ</a></td>
-                        </tr>
-                    </table>
+                <div class="product-info">
+                    <p>現在価額:    {{ number_format($product->start_price)}}円</p>
+                    <p>即決価額:    {{ number_format($product->buyout_price)}}円</p>
+                    <p><a class="nav-link" href="productDetail/{{ $product->id }}">詳細へ</a></p>
                 </div>
             </div>
 

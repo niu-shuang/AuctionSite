@@ -34,7 +34,7 @@ class UserLoginController extends Controller
         ]);
     }
 
-    public  function showRegister()
+    public function showRegister()
     {
         return view("userRegister");
     }
