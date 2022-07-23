@@ -53,8 +53,11 @@
             {{ session('err_msg') }}
         </p>
         @endif
+		
+		<iframe width="100%" height="480" src="https://www.youtube.com/embed/mlkWDRN4I04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
+		<br>
+		<br>
         @foreach($products as $product)
         <div class="product-plate">
             <div class="product-title"><p>商品名:      {{$product->product_name}}</p></div>
