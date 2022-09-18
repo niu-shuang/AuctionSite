@@ -1,0 +1,56 @@
+.navbar{
+    display: flex;
+    list-style: none;
+    justify-content: left;
+    font-size: 2rem;
+}
+
+.logout{
+    margin-left: auto;
+    font-size: 2rem;
+}
+
+.header{
+    height: 200px;
+
+}
+
+.header-line1{
+    display: flex;
+    height: 72px;
+}
+
+.header-line2{
+    display: flex;
+    height: 100px;
+}
+
+.logo{
+    width: 30vw;
+    height: 72px;
+    margin-left: 20px;
+}
+
+.social{
+    display: flex;
+    margin-left: auto;
+}
+
+.social-icon{
+    margin-right: 20px;
+    margin-top: 20px;
+    width: 48px;
+    height: 48px;
+}
+
+.nav-links{
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-item{
+    color: #0b0b0b;
+    font-size: xx-large;
+    margin-left: 20px;
+    margin-right: 20px;
+}
