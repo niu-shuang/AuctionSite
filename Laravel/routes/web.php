@@ -16,11 +16,13 @@ use App\Http\Controllers\UserLoginController;
 
 Route::group(['middleware' =>['guest']], function(){
     Route::get('/',[HomeController::class, 'show'])
-        ->name("all");
+        ->name("home");
+    Route::get('productList',[HomeController::class, 'showList'])
+        ->name("productList");
     Route::post('checkUserLogin','App\Http\Controllers\UserLoginController@checkLogin')
         ->name("checkUserLogin");
     Route::get('userLogin','App\Http\Controllers\UserLoginController@show')
-        ->name("userLogin");
+        ->name("login");
     Route::get('userRegister','App\Http\Controllers\UserLoginController@showRegister')
         ->name('userRegister');
     Route::get('productRegister','App\Http\Controllers\ProductRegisterController@show')
@@ -32,6 +34,10 @@ Route::group(['middleware' =>['guest']], function(){
 });
 
 Route::group(['middleware' => ['auth']], function() {
+    Route::get('home',[HomeController::class, 'show'])
+        ->name("home");
+    Route::get('productList',[HomeController::class, 'showList'])
+        ->name("productList");
     Route::get('userLogout',[UserLoginController::class,'logout'])
         ->name('userLogout');
     Route::get('productDetail/{id}',[HomeController::class, 'showDetail'])

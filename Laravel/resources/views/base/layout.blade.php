@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/custom.css">
     <!--Main Styles Css-->
-    <link rel="stylesheet" href="css/style-light.css">
+    <link rel="stylesheet" href="/css/style-light.css">
 
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="/css/header.css">
     <script src="/js/app.js" defer></script>
     <!--Site Main JS-->
     <script src="js/main.js"></script>
@@ -19,7 +19,7 @@
 <header>
     @include('base/header')
 </header>
-<br>
+
 <div class="container content">
     @yield('content')
 </div>

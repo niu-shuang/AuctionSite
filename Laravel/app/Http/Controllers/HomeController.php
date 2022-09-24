@@ -6,13 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\ProductBid;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use DateTime;
 
 class HomeController extends Controller
 {
+    public  function show()
+    {
+        return view("home");
+    }
+
     /**
      * @return view
      */
-    public function show()
+    public function showList()
     {
         $products = Product::all();
         foreach ($products as $product) {
@@ -23,9 +30,10 @@ class HomeController extends Controller
                 $high_price = $bid_results[0]['bid_price'];
                 $product->start_price = $high_price;
             }
+
         }
 
-        return view("home",['products' => $products]);
+        return view("productList",['products' => $products]);
     }
 
     /**
@@ -40,8 +48,13 @@ class HomeController extends Controller
             $high_price = $bid_results[0]['bid_price'];
             $product->start_price = $high_price;
         }
-        $product->model_year = \DateTime::createFromFormat("Y-m-d", $product->model_year);
-        $product->model_year = $product->model_year->format("Y");
+        $photoList = array($product->thumbnail);
+        $split = explode(";",$product->photos);
+        foreach ($split as $item) {
+            if($item != "")
+                $photoList[] = $item;
+        }
+        $product->photoList = $photoList;
         return view("productDetail",['product' => $product]);
     }
 

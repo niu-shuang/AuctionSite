@@ -74,7 +74,7 @@ body {
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     line-height: 1.65;
-    color: #fbfbfb;
+    color: black;
     background-color: #fbfbfb;
 }
 
@@ -1163,6 +1163,6 @@ blockquote {
         padding: 0;
     }
     .portfolio-section .portfolio-filter ul {
-        border: none; 
+        border: none;
     }
 }

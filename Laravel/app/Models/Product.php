@@ -22,6 +22,7 @@ class Product extends Model
         'displacement',
         'mile_age',
         'has_repaired',
-        'body_color'
+        'body_color',
+        'photos'
     ];
 }

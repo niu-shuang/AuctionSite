@@ -3,6 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
+        <br>
         <h2>商品登録</h2>
         <form method="POST" action="{{ route('registerProduct') }}" enctype="multipart/form-data">
             @csrf
@@ -23,7 +24,7 @@
             <label for="car_type_name" class="sr-only">車種名</label>
             <input type="text" id="car_type_name" name="car_type_name" class="form-control" placeholder="Car Type Name" required>
             <label for="model_year" class="sr-only">年式</label>
-            <input type="date" id="model_year" name="model_year" class="form-control" required>
+            <input type="number" id="model_year" name="model_year" class="form-control" required>
             <label for="displacement" class="sr-only">排気量</label>
             <input type="number" id="displacement" name="displacement" class="form-control" required>
             <label for="mile_age" class="sr-only">走行距離</label>
@@ -33,7 +34,17 @@
             <input type="checkbox" id="has_repaired" name="has_repaired" value="1" {{ old('has_repaired') == '1' ? 'checked' : '' }}>
             <label for="has_repaired">修復歴あり</label><br>
             <label for="thumbnail" class="sr-only">サムネイル</label>
-            <input type="file" id="thumbnail" name="thumbnail" accept="image/*"/>
+            <input type="file" id="thumbnail" name="thumbnail" accept="image/*"/><br>
+            <label for="photo1" class="sr-only">写真1</label><br>
+            <input type="file" id="photo1" name="photo1" accept="image/*"/><br>
+            <label for="photo2" class="sr-only">写真2</label><br>
+            <input type="file" id="photo2" name="photo2" accept="image/*"/><br>
+            <label for="photo3" class="sr-only">写真3</label><br>
+            <input type="file" id="photo3" name="photo3" accept="image/*"/><br>
+            <label for="photo4" class="sr-only">写真4</label><br>
+            <input type="file" id="photo4" name="photo4" accept="image/*"/><br>
+            <label for="photo5" class="sr-only">写真5</label><br>
+            <input type="file" id="photo5" name="photo5" accept="image/*"/><br>
             <button class="btn btn-lg btn-primary btn-block" type="submit">登録</button>
         </form>
     </div>

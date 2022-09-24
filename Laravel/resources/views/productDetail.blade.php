@@ -1,65 +1,64 @@
-<!DOCTYPE HTML>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type='text/javascript' src='/js/jquery.min.js'></script>
-    <script type="text/javascript" src="/js/photo.js"></script>
-    <title>@yield('title')</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/custom.css">
-    <script src="/js/app.js" defer></script>
+@extends('base/layout')
+@section('content')
 
-    <style type="text/css">
-        <!--
-        ul#gallery {
-            width: 100%;
-            height: auto;
-        }
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
 
-        ul#gallery li {
-            width: 100px;
-            padding: 8px 8px 0px 0px;
-            height: auto;
-            float: left;
-        }
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script type="module">
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        // direction: 'vertical',
+        loop: true,
 
-        ul#gallery li.end {
-            width: 100px;
-            padding: 8px 0px 0px 0px;
-            height: auto;
-        }
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
 
-        ul#gallery li img {
-            width: 100px;
-            height: 67px;
-        }
-        -->
-    </style>
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
 
-    <script type="text/javascript">
-        $(function() {
-            $('#imgMain a').lightBox();
-        });
-    </script>
-</head>
-<header class="header bg-dark  fixed-top">
-    @include('base/header')
-</header>
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+</script>
+<style type="text/css">
+    .swiper {
+        width: 800px;
+        height: 600px;
+    }
+</style>
 <br>
 
 <div class="container content">
     <div class="row">
+
         <div class="">
             <h2>{{$product->product_name}}</h2>
-                <div id="imgMain"><img src="/trunk/img/{{$product->thumbnail}}" alt="" name="target" id="target" /></div>
-                    <ul id="gallery" class="clearfix">
-                        <li><a href="/trunk/img/{{$product->thumbnail}}"><img src="/trunk/img/{{$product->thumbnail}}" alt="" /></a></li>
-                        <li class="end"><a href="/trunk/img/{{$product->thumbnail}}"><img src="/trunk/img/{{$product->thumbnail}}" alt="" /></a></li>
-                    </ul>
-        </div>
+            <div class="banner">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!--<a class="swiper-slide" href="javascript:void(0)"><img src="img/banner/0.jpg"></a>-->
+                        <!--<a class="swiper-slide" href="./notice/detail/335.html"><img src="/img/banner/335.jpg"></a>-->
+
+                        @foreach($product->photoList as $photo)
+                        <div class="swiper-slide"><img src="/trunk/img/{{$photo}}"></div>
+                        @endforeach
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
         <div class="product-info">
             <p>現在価額 : {{ number_format($product->start_price)}}</p>
             <p>即決価格 : {{ number_format($product->buyout_price)}}</p>
@@ -79,8 +78,4 @@
         </div>
     </div>
 </div>
-<footer class="footer bg-dark  fixed-bottom">
-    @include('base/footer')
-</footer>
-</body>
-</html>
+@endsection

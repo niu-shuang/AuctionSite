@@ -17,6 +17,7 @@ class ProductRegisterController extends Controller
         {
             return back()->withErrors(['err_msg'=>'即決価格が初期価格より低い']);
         }
+        $inputs['photos'] = "";
         if($file = $request->thumbnail)
         {
             $fileName = time().$file->getClientOriginalName();
@@ -28,6 +29,52 @@ class ProductRegisterController extends Controller
         {
             return back()->withErrors(['err_msg'=>'ファイルが正しくアップロードしませんでした']);
         }
+
+        if($file = $request->photo1)
+        {
+            $fileName = time().$file->getClientOriginalName();
+            $target_path = public_path('trunk/img/');
+            $file->move($target_path, $fileName);
+            $inputs['photos'].=$fileName;
+            $inputs['photos'].=';';
+        }
+
+        if($file = $request->photo2)
+        {
+            $fileName = time().$file->getClientOriginalName();
+            $target_path = public_path('trunk/img/');
+            $file->move($target_path, $fileName);
+            $inputs['photos'].=$fileName;
+            $inputs['photos'].=';';
+        }
+
+        if($file = $request->photo3)
+        {
+            $fileName = time().$file->getClientOriginalName();
+            $target_path = public_path('trunk/img/');
+            $file->move($target_path, $fileName);
+            $inputs['photos'].=$fileName;
+            $inputs['photos'].=';';
+        }
+
+        if($file = $request->photo4)
+        {
+            $fileName = time().$file->getClientOriginalName();
+            $target_path = public_path('trunk/img/');
+            $file->move($target_path, $fileName);
+            $inputs['photos'].=$fileName;
+            $inputs['photos'].=';';
+        }
+
+        if($file = $request->photo5)
+        {
+            $fileName = time().$file->getClientOriginalName();
+            $target_path = public_path('trunk/img/');
+            $file->move($target_path, $fileName);
+            $inputs['photos'].=$fileName;
+            $inputs['photos'].=';';
+        }
+
 
         if( !array_key_exists('has_repaired', $inputs)){
             $inputs['has_repaired'] = 0;

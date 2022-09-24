@@ -52,13 +52,13 @@ class UserLoginController extends Controller
             \DB::rollback();
             abort(500);
         }
-        return redirect(route('userLogin'));
+        return redirect(route('login'));
     }
 
     public function logout()
     {
         Auth::logout();
 
-        return redirect()->route('userLogin')->with('danger', 'ログアウトしました！');
+        return redirect()->route('home')->with('danger', 'ログアウトしました！');
     }
 }
