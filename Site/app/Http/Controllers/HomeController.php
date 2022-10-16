@@ -11,15 +11,20 @@ use DateTime;
 
 class HomeController extends Controller
 {
-    public  function show()
+    public function show()
     {
         return view("home");
+    }
+
+    public function showCarTop()
+    {
+        return view("carTop");
     }
 
     /**
      * @return view
      */
-    public function showList()
+    public function showCarList()
     {
         $products = Product::all();
         foreach ($products as $product) {
@@ -33,13 +38,13 @@ class HomeController extends Controller
 
         }
 
-        return view("productList",['products' => $products]);
+        return view("carProductList",['products' => $products]);
     }
 
     /**
      * @return view
      */
-    public function showDetail($id){
+    public function showCarDetail($id){
         $product = Product::find($id);
         $bid_results = ProductBid::where('product_id','=',$product->id)
             ->orderby('bid_price','desc')->get();
@@ -55,13 +60,13 @@ class HomeController extends Controller
                 $photoList[] = $item;
         }
         $product->photoList = $photoList;
-        return view("productDetail",['product' => $product]);
+        return view("carProductDetail",['product' => $product]);
     }
 
     /**
      * @return view
      */
-    public function showProductBid(Request $request){
+    public function showCarProductBid(Request $request){
         $input = $request->all();
         $product = Product::find($input['id']);
         $bid_results = ProductBid::where('product_id','=',$product->id)
@@ -71,13 +76,13 @@ class HomeController extends Controller
             $high_price = $bid_results[0]['bid_price'];
             $product->start_price = $high_price;
         }
-        return view("productBid",['product' => $product]);
+        return view("carProductBid",['product' => $product]);
     }
 
     /**
      * @return view
      */
-    public  function checkProductBid(Request $request)
+    public  function checkCarProductBid(Request $request)
     {
         $input = $request->all();
         $product = Product::find($input['product_id']);
@@ -112,6 +117,6 @@ class HomeController extends Controller
             abort(500);
         }
         $product->start_price = $input['bid_price'];
-        return view("productDetail",['product' => $product]);
+        return view("carProductDetail",['product' => $product]);
     }
 }

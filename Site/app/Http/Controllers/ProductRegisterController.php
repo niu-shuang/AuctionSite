@@ -8,7 +8,7 @@ use App\Models\Product;
 class ProductRegisterController extends Controller
 {
     //
-    public function registerProduct(Request $request)
+    public function registerCarProduct(Request $request)
     {
         $inputs = $request->all();
         $start_price = $request->start_price;
@@ -90,11 +90,11 @@ class ProductRegisterController extends Controller
             \DB::rollback();
             abort(500);
         }
-        return redirect('productRegister')->with('upload_success','アップロード成功しました');
+        return redirect('carProductRegister')->with('upload_success','アップロード成功しました');
     }
 
-    public function show()
+    public function showCar()
     {
-        return view('productRegister');
+        return view('carProductRegister');
     }
 }

@@ -2,7 +2,7 @@
 @section('title', '入札する')
 @section('content')
 <h2 class="product-align-center">商品入札</h2>
-<form method="POST" action="{{ route('checkProductBid') }}">
+<form method="POST" action="{{ route('checkCarProductBid') }}">
     @csrf
     @foreach ($errors->all() as $error)
     <ul class="alert alert-danger">

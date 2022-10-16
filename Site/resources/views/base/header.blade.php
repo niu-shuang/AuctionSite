@@ -13,10 +13,8 @@
     <div class="header-line2">
         <ul class="nav-links">
             <li><a class="nav-item" href="http://photosite.local/">PHOTO</a></li>
-            <li><a class="nav-item" href="http://auction.local/">CAR</a></li>
+            <li><a class="nav-item" href="http://zuihao.local/carTop">CAR</a></li>
             <li><a class="nav-item" href="http://businesssupport.local/">M&A</a></li>
         </ul>
     </div>
 </div>
-
-

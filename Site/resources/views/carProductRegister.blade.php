@@ -5,7 +5,7 @@
     <div class="col-md-8 col-md-offset-2">
         <br>
         <h2>商品登録</h2>
-        <form method="POST" action="{{ route('registerProduct') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('registerCarProduct') }}" enctype="multipart/form-data">
             @csrf
             @foreach ($errors->all() as $error)
             <ul class="alert alert-danger">

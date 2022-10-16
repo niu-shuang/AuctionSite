@@ -16,7 +16,7 @@
         @foreach($products as $product)
         <div class="product-cell">
             <div class="product-img">
-                <a href="productDetail/{{ $product->id }}"><img src='trunk/img/{{$product->thumbnail}}' alt=""/></a>
+                <a href="carProductDetail/{{ $product->id }}"><img src='trunk/img/{{$product->thumbnail}}' alt=""/></a>
             </div>
             <div class="product-info"><h3>{{$product->car_type_name}}</h3></div>
             <div class="product-info"><h3>{{$product->model_year}}</h3></div>

@@ -64,7 +64,7 @@
             <p>即決価格 : {{ number_format($product->buyout_price)}}</p>
         </div>
         <div class="product-align-center">
-            <form method="GET" action="{{ route('showProductBid') }}">
+            <form method="GET" action="{{ route('showCarProductBid') }}">
                 <input type="hidden" name="id" value="{{$product->id}}">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">入札する</button>
             </form>
