@@ -38,7 +38,7 @@
 <script src="js/main.js"></script>
 <div class="site-main">
     <ul>
-        <li><a href="http://zuihao.local/carTop"><img src="/img/CarAuction.png"></a></li>
+        <li><a href="http://54.250.50.84/carTop"><img src="/img/CarAuction.png"></a></li>
         <li><a href="http://photosite.local/"><img  src="/img/PhotoAuction.png"></a></li>
         <li><a href="http://businesssupport.local/"><img src="/img/M&AAuction.png"></a></li>
     </ul>
