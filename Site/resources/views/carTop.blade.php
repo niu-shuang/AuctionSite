@@ -14,7 +14,7 @@
         <div class="site-main">
             <ul>
                 <li><a href="/carProductList"><img src="/img/August.png"></a></li>
-                <li><a href="carProductList"><img  src="/img/September.png"></a></li>
+                <li><a href="/carProductList"><img  src="/img/September.png"></a></li>
                 <li><img src="/img/October.png"></li>
             </ul>
         </div>
