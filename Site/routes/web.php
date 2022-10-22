@@ -31,7 +31,7 @@ Route::group(['middleware' =>['guest']], function(){
         ->name('carProductRegister');
     Route::post('doUserRegister', 'App\Http\Controllers\UserLoginController@register')
         ->name('register');
-    Route::post("doCarProductRegister",'App\Http\Controllers\ProductRegisterController@registerProduct')
+    Route::post("doCarProductRegister",'App\Http\Controllers\ProductRegisterController@registerCarProduct')
         ->name('registerCarProduct');
 });
 
