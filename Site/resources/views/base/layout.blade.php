@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/header.css">
     <script src="/js/app.js" defer></script>
     <!--Site Main JS-->
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
 </head>
 <body>
 <header>

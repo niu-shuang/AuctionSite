@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
-use App\Models\ProductBid;
+use App\Models\CarProduct;
+use App\Models\CarProductBid;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use DateTime;
@@ -26,9 +26,9 @@ class HomeController extends Controller
      */
     public function showCarList()
     {
-        $products = Product::all();
+        $products = CarProduct::all();
         foreach ($products as $product) {
-            $bid_results = ProductBid::where('product_id','=',$product->id)
+            $bid_results = CarProductBid::where('product_id','=',$product->id)
                             ->orderby('bid_price','desc')->get();
             if(count($bid_results) > 0)
             {
@@ -45,8 +45,8 @@ class HomeController extends Controller
      * @return view
      */
     public function showCarDetail($id){
-        $product = Product::find($id);
-        $bid_results = ProductBid::where('product_id','=',$product->id)
+        $product = CarProduct::find($id);
+        $bid_results = CarProductBid::where('product_id','=',$product->id)
             ->orderby('bid_price','desc')->get();
         if(count($bid_results) > 0)
         {
@@ -68,8 +68,8 @@ class HomeController extends Controller
      */
     public function showCarProductBid(Request $request){
         $input = $request->all();
-        $product = Product::find($input['id']);
-        $bid_results = ProductBid::where('product_id','=',$product->id)
+        $product = CarProduct::find($input['id']);
+        $bid_results = CarProductBid::where('product_id','=',$product->id)
             ->orderby('bid_price','desc')->get();
         if(count($bid_results) > 0)
         {
@@ -85,9 +85,9 @@ class HomeController extends Controller
     public  function checkCarProductBid(Request $request)
     {
         $input = $request->all();
-        $product = Product::find($input['product_id']);
+        $product = CarProduct::find($input['product_id']);
         $high_price = $product->start_price;
-        $bid_results = ProductBid::where('product_id','=',$product->id)
+        $bid_results = CarProductBid::where('product_id','=',$product->id)
             ->orderby('bid_price','desc')->get();
         if(count($bid_results) > 0)
         {
@@ -109,7 +109,7 @@ class HomeController extends Controller
         ];
         \DB::beginTransaction();
         try{
-            ProductBid::create($bidInfo);
+            CarProductBid::create($bidInfo);
             \DB::commit();
         }catch (\Throwable $e)
         {

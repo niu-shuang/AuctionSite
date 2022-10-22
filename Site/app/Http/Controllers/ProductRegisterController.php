@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\CarProduct;
 
 class ProductRegisterController extends Controller
 {
@@ -82,7 +82,7 @@ class ProductRegisterController extends Controller
 
         \DB::beginTransaction();
         try{
-            Product::create($inputs);
+            CarProduct::create($inputs);
             \DB::commit();
         }catch(\Throwable $e)
         {

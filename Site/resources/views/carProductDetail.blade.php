@@ -6,6 +6,7 @@
     href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 />
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script type="module">
     const swiper = new Swiper('.swiper', {
@@ -28,6 +29,26 @@
         scrollbar: {
             el: '.swiper-scrollbar',
         },
+    });
+</script>
+<script>
+    $(function(){
+        json = "../trunk/json/1.json";
+        target = $('#list');
+        $.getJSON(json, function(data,status){
+            console.log(status);
+            if(status == "success"){
+                for(var n in data.Sheet1) {
+                    var text = '<li>';
+                    var line = data.Sheet1[n].key + '  ' + data.Sheet1[n].value;
+                    text = text+line+'</li>';
+                    $(target).append(text);
+                }
+            }
+            else{
+                $(target).append('<li>データが見つかりません</li>');
+            }
+        });
     });
 </script>
 <style type="text/css">
@@ -70,11 +91,9 @@
             </form>
         </div>
         <div class="product-info">
-            <p>メーカー名 : {{ $product->maker_name}}</p>
-            <p>車種名 : {{ $product->car_type_name}}</p>
-            <p>年式 : {{ $product->model_year}}年</p>
-            <p>排気量 : {{ $product->displacement}}cc</p>
-            <p>走行距離 : {{ number_format($product->mile_age) }}km</p>
+            <ul id="list">
+                <!-- ここに出力します -->
+            </ul>
         </div>
     </div>
 </div>
