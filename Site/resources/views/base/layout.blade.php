@@ -19,7 +19,6 @@
 <header>
     @include('base/header')
 </header>
-
 <div class="container content">
     @yield('content')
 </div>

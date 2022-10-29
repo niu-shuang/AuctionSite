@@ -14,7 +14,7 @@ use App\Http\Controllers\UserLoginController;
 |
 */
 
-Route::group(['middleware' =>['guest']], function(){
+Route::group(['middleware' =>['web']], function(){
     Route::get('/',[HomeController::class, 'show'])
         ->name("home");
     Route::get('carTop',[HomeController::class, 'showCarTop'])
@@ -36,10 +36,6 @@ Route::group(['middleware' =>['guest']], function(){
 });
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('home',[HomeController::class, 'show'])
-        ->name("home");
-    Route::get('carProductList',[HomeController::class, 'showCarList'])
-        ->name("carProductList");
     Route::get('userLogout',[UserLoginController::class,'logout'])
         ->name('userLogout');
     Route::get('carProductDetail/{id}',[HomeController::class, 'showCarDetail'])

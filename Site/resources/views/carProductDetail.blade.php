@@ -39,9 +39,10 @@
             console.log(status);
             if(status == "success"){
                 for(var n in data.Sheet1) {
-                    var text = '<li>';
-                    var line = data.Sheet1[n].key + '  ' + data.Sheet1[n].value;
-                    text = text+line+'</li>';
+                    var text = '<tr> \\n';
+                    var line = '<th>' + data.Sheet1[n].key + ' </th>  <td>' + data.Sheet1[n].value + '</td>';
+                    text = text + '\\n';
+                    text = text+line+'</tr>';
                     $(target).append(text);
                 }
             }
@@ -59,7 +60,7 @@
 </style>
 <br>
 
-<div class="container content">
+
     <div class="row">
 
         <div class="">
@@ -91,10 +92,12 @@
             </form>
         </div>
         <div class="product-info">
-            <ul id="list">
-                <!-- ここに出力します -->
-            </ul>
+            <table>
+                <tbody id="list">
+                    <!-- ここに出力します -->
+                </tbody>
+            </table>
         </div>
     </div>
-</div>
+
 @endsection

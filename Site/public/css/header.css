@@ -11,8 +11,9 @@
 }
 
 .header{
-    height: 200px;
-
+    height: 140px;
+    background-color: #fbfbfb;
+    z-index: 1000;
 }
 
 .header-line1{
@@ -22,7 +23,7 @@
 
 .header-line2{
     display: flex;
-    height: 100px;
+    height: 72px;
 }
 
 .logo{
