@@ -1,11 +1,4 @@
 @extends('base/layout')
-@section('content')
-@section('title', '株式会社最好')
-<!--Modernizr Js-->
-<script src="js/modernizr.js"></script>
-
-<body>
-
 <!--Preloader Start-->
 <div class="preloader">
     <div class="loader">
@@ -21,6 +14,12 @@
     </div>
 </div>
 <!--Preloader End-->
+@section('content')
+@section('title', '株式会社最好')
+<!--Modernizr Js-->
+<script src="js/modernizr.js"></script>
+
+<body>
 
 
 <!--Ajax Portfolio Container Start-->
