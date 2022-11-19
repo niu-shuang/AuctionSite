@@ -33,6 +33,6 @@
 $(window).on('load', function() {
 
     /*======== Preloader ========*/
-    $(".loader").delay(3000).fadeOut();
+    //$(".loader").delay(3000).fadeOut();
     $(".preloader").delay(3000).fadeOut();
 });
