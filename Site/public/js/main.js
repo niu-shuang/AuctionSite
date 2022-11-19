@@ -23,7 +23,7 @@
         let $body = $('body');
         //$html.addClass('mobile');
         $(window).on('resize orientationchange', function() {
-            //$html.css('zoom', screen.width / 720);
+            $html.css('zoom', screen.width/720 );
         }).trigger('resize');
     }
 })();
@@ -33,6 +33,6 @@
 $(window).on('load', function() {
 
     /*======== Preloader ========*/
-    $(".loader").delay(1000).fadeOut();
-    $(".preloader").delay(1000).fadeOut();
+    $(".loader").delay(3000).fadeOut();
+    $(".preloader").delay(3000).fadeOut();
 });

@@ -2,15 +2,7 @@
 <!--Preloader Start-->
 <div class="preloader">
     <div class="loader">
-        <!--Your Name-->
-        <h4>株式会社最好</h4>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <video preload="auto" muted autoplay src="img/top_animation.mp4"></video>
     </div>
 </div>
 <!--Preloader End-->
