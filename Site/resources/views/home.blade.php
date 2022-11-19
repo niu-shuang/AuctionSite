@@ -1,9 +1,7 @@
 @extends('base/layout')
 <!--Preloader Start-->
 <div class="preloader">
-    <div class="loader">
         <video preload="auto" muted autoplay src="img/top_animation.mp4"></video>
-    </div>
 </div>
 <!--Preloader End-->
 @section('content')
