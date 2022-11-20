@@ -39,6 +39,7 @@
     display: flex;
     margin-left: auto;
     width: 360px;
+    justify-content: right;
 }
 
 .social-icon{
