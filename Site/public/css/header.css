@@ -18,7 +18,8 @@
 
 .header-line1{
     display: flex;
-    height: 72px;
+    height: 62px;
+    margin-top: 10px;
 }
 
 .header-line2{
@@ -27,9 +28,10 @@
 }
 
 .logo{
-    width: 30vw;
-    height: 72px;
-    margin-left: 20px;
+    height: 50%;
+    width: 50%;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .social{
@@ -38,10 +40,9 @@
 }
 
 .social-icon{
-    margin-right: 20px;
-    margin-top: 20px;
     width: 48px;
     height: 48px;
+    margin-right: 10px;
 }
 
 .nav-links{

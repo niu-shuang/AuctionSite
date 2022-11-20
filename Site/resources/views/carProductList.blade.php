@@ -9,8 +9,7 @@
             {{ session('err_msg') }}
         </p>
         @endif
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/TuXdYwibxwQ" title="【人気キャンプ車5選】ランクルプラドにジープラングラーなど🚗アウトドアおすすめ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+        <iframe width="459" height="816" src="https://www.youtube.com/embed/CuritSGGm08" title="2022年11月20日" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br>
         <br>
         @foreach($products as $product)
