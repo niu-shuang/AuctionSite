@@ -11,6 +11,7 @@
 }
 
 .header{
+    width: 720px;
     height: 140px;
     background-color: #fbfbfb;
     z-index: 1000;
@@ -37,6 +38,7 @@
 .social{
     display: flex;
     margin-left: auto;
+    width: 360px;
 }
 
 .social-icon{
