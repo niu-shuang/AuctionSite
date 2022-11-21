@@ -82,7 +82,7 @@ class HomeController extends Controller
     /**
      * @return view
      */
-    public  function checkCarProductBid(Request $request)
+    public function checkCarProductBid(Request $request)
     {
         $input = $request->all();
         $product = CarProduct::find($input['product_id']);
@@ -117,6 +117,6 @@ class HomeController extends Controller
             abort(500);
         }
         $product->start_price = $input['bid_price'];
-        return view("carProductDetail",['product' => $product]);
+        return $this->showCarDetail($product->id);
     }
 }
