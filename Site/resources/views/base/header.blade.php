@@ -1,6 +1,6 @@
 <div class="header fixed-top">
     <div class="header-line1">
-        <img class="logo" src="/img/logo.png">
+        <a href="{{ config('app.url') }}"><img class="logo" src="/img/logo.png"></a>
 
         <ul class="social">
             <li><a href="https://youtube.com/@zuihaoJP"><img class="social-icon" src="/img/youtube_logo.png"></a></li>

@@ -87,3 +87,24 @@
     padding: 5px 10px;
     border: 1px solid #CCCCCC;
 }
+
+@font-face {
+    font-family: 'default-font';
+    src: url(public/fonts/KozGoPr6N-Regular.otf) format('opentype');
+}
+* {
+    font-family: 'default-font';
+}
+
+.user-login{
+    background-color: #F3951B;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.user-login input{
+    width: 400px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
