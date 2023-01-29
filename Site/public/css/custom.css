@@ -22,6 +22,7 @@
     overflow: auto;
     font-size: 2rem;
     padding-bottom: 200px;
+    font-family: 'default-font';
 }
 
 .product-cell{
@@ -90,10 +91,17 @@
 
 @font-face {
     font-family: 'default-font';
-    src: url(public/fonts/KozGoPr6N-Regular.otf) format('opentype');
+    src: url(../fonts/KozGoPr6N-Regular.otf) format('opentype');
 }
-* {
-    font-family: 'default-font';
+
+@font-face {
+    font-family: 'title';
+    src: url(../fonts/Futura_Bold_font.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'title-italic';
+    src: url(../fonts/Futura_Bold_Italic_font.ttf)
 }
 
 .user-login{

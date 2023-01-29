@@ -15,6 +15,7 @@
     height: 140px;
     background-color: #fbfbfb;
     z-index: 1000;
+    font-family: 'title';
 }
 
 .header-line1{
