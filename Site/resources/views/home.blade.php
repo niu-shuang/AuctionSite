@@ -31,6 +31,7 @@
         <li><a href="/carTop"><img src="/img/CarAuction.png"></a></li>
         <li><a href="http://photosite.local/"><img  src="/img/PhotoAuction.png"></a></li>
         <li><a href="http://businesssupport.local/"><img src="/img/HouseAuction.png"></a></li>
+        <li><a href="http://businesssupport.local/"><img src="/img/M&AAuction.png"></a></li>
     </ul>
 </div>
 

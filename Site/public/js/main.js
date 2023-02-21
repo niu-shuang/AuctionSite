@@ -23,7 +23,7 @@
         let $body = $('body');
         //$html.addClass('mobile');
         $(window).on('resize orientationchange', function() {
-            $html.css('zoom', screen.width/720 );
+            $html.css('zoom', screen.width/960 );
         }).trigger('resize');
     }
 })();

@@ -9,6 +9,7 @@
             {{ session('err_msg') }}
         </p>
         @endif
+        <a href="/carTop"><img src="/img/CarAuction.png"></a>
         @foreach($products as $product)
         <div class="product-cell">
             <div class="product-img">

@@ -18,7 +18,6 @@
 }
 
 .content{
-    margin-top: 100px;
     overflow: auto;
     font-size: 2rem;
     padding-bottom: 200px;
@@ -27,24 +26,21 @@
 
 .product-cell{
     display: inline-block;
-    width: 320px;
-    height: 360px;
+    width: 300px;
+    height: 300px;
     padding-left: 20px;
     padding-right: 20px;
-    margin-bottom: 50px;
-    margin-right: 20px;
+    padding-top: 30px;
 }
 
 .product-img{
     display: inline-block;
-    margin-top: 20px;
-    height: 320px;
+    margin-top: auto;
     overflow: hidden;
 }
 
 .product-img a{
     display: inline-block;
-    height: 320px;
     vertical-align: middle;
 }
 
@@ -95,7 +91,7 @@
 
 @font-face {
     font-family: 'title';
-    src: url(../fonts/Futura_Bold_font.ttf) format('truetype');
+    src: url(../fonts/futur.ttf) format('truetype');
 }
 
 @font-face {
